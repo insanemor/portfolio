@@ -1,0 +1,31 @@
+version: '3'
+
+tasks:
+
+  # Task Start e Stop
+  start:
+    desc: "Start the portfolio"
+    cmds:
+      - task: kind-create
+
+  stop:
+    desc: "Destroy the infrastructure"
+    cmds:
+      - task: kind-delete   
+
+# Bloco de conhecimento do Kind
+  kind-create:
+    desc: "Create a kind cluster"
+    cmds:
+      - kind create cluster --config kind/portfolio.yaml
+
+  kind-delete:
+    desc: "Delete the kind cluster"
+    cmds:
+      - kind delete cluster --name portfolio
+
+  kind-load:
+    desc: "Load the kind cluster"
+    cmds:
+      - kind load docker-image portfolio-frontend:latest
+      - kind load docker-image portfolio-backend:latest
