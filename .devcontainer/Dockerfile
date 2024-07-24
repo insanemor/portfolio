@@ -27,6 +27,7 @@ RUN apt-get update -y && apt-get install -y \
     gnupg \
     openvpn \
     ssh \
+    docker.io \
     locales 
 
 RUN locale-gen en_US.UTF-8
@@ -45,6 +46,9 @@ RUN mkdir -p /work \
     && chown -R ins:root /work
 
 WORKDIR /work
+
+# Create docker group and add user to it
+RUN usermod -aG docker ${USER}
 
 USER ins
 

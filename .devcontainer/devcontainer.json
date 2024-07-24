@@ -10,7 +10,7 @@
 
 	//"forwardPorts": [8000],
 
-	// "postCreateCommand": "./.devcontainer/setup.sh",
+	"postCreateCommand": "./.devcontainer/setup.sh",
 
 	"customizations": {
 		"vscode": {
@@ -31,7 +31,8 @@
 	// ],
 
 	"mounts": [
-		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+		"source=/run/podman/podman.sock,target=/var/run/docker.sock,type=bind"
 	]
 
 
