@@ -1,0 +1,12 @@
+awscli 2.9.18
+helm 3.9.0
+k9s latest
+kubectl 1.24.0
+kubectx 0.9.4
+terraform 1.0.11
+terragrunt 0.35.13
+argocd latest
+aws-vault latest
+azure-cli latest
+krew latest
+sops latest
