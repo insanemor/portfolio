@@ -37,5 +37,4 @@
 		"type=bind,source=/home/${localEnv:USER}/.gitconfig,target=/home/ins/.gitconfig,readonly"
 	]
 
-
 }
