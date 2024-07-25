@@ -32,7 +32,9 @@
 
 	"mounts": [
 		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-		"source=/run/podman/podman.sock,target=/var/run/docker.sock,type=bind"
+		"source=/run/podman/podman.sock,target=/var/run/docker.sock,type=bind",
+		"type=bind,source=/home/${localEnv:USER}/.ssh,target=/home/ins/.ssh,readonly",
+		"type=bind,source=/home/${localEnv:USER}/.gitconfig,target=/home/ins/.gitconfig,readonly"
 	]
 
 
