@@ -18,11 +18,17 @@ tasks:
     desc: "Create a kind cluster"
     cmds:
       - kind create cluster --config kind/portfolio.yaml
+      - task: kind-setup-local
 
   kind-delete:
     desc: "Delete the kind cluster"
     cmds:
       - kind delete cluster --name portfolio
+
+  kind-setup-local:
+    desc: "Set up Kubernetes cluster and update kubeconfig"
+    cmds:
+      - ./kind/setup-k8s.sh
 
   kind-load:
     desc: "Load the kind cluster"
